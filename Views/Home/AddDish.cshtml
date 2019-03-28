@@ -1,0 +1,86 @@
+@model Dishes
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #form1{
+            width: 25%;
+            justify-content: center;
+            
+        }
+        .tasty{
+            width: 30%;
+        }
+        html,body{
+            background-image: url("/images/lemon.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            
+        }
+        h1{
+            text-align: center;
+        }
+        button{
+            background-color:grey;
+            border: 1px  solid black;
+            margin-left: 45%;
+            text-decoration: none;
+            text-align: center;
+        }
+        button:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+       
+   
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CRUDELICIOUS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Add a Recipe: </h1>
+    <button><a href="/">Home</a></button>
+    <br>
+    <br>
+    <br>
+    <div id ="form1">
+  <form asp-action="Create" asp-controller="Home" method = "POST">
+      <input asp-for="Name" type="text" class="form-control" name = "Name" placeholder="Dish Name">
+      <span asp-validation-for="Name"></span>
+      
+      <br>
+      
+      <input asp-for="Chef" type="text" class="form-control" name = "Chef" placeholder="Chef Name">
+      <span asp-validation-for="Chef"></span>
+      <br>
+      <input asp-for="Calories" type="text" class="form-control" name = "Calories" placeholder="Calories">
+      <span asp-validation-for="Calories"></span>
+      <br>
+    <div class = "tasty">
+      <input asp-for="Tastiness" type="text" class="form-control" name = "Tastiness" placeholder="Tastiness"> 
+      <span asp-validation-for="Tastiness"></span>
+    </div> 
+    <br>
+    <p>Description:</p>
+    <span asp-validation-for="Text"></span>
+    <textarea name ="Text"></textarea>
+    <br>
+    <input type = "submit" value="Add Dish">
+    <br>
+
+    </div>
+      
+    
+  
+</form>
+    
+    
+</body>
+</html>

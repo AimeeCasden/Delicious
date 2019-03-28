@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html,body{
+            background-image: url("/images/lemon.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        button{
+            background-color:grey;
+            border: 1px  solid black;
+            margin-left: 45%;
+            text-decoration: none;
+            text-align: center;
+        }
+        button:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        p{
+            font-size: 20px;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dish Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <button><a href="/">Home</a></button>
+    <h1>@ViewBag.ViewDish.Name</h1>
+    <h3>@ViewBag.ViewDish.Chef</h3>
+    <br>
+    
+    <h4>Calories: @ViewBag.ViewDish.Calories Tastiness: @ViewBag.ViewDish.Tastiness</h4>
+    <br>
+    <br>
+    <br>
+    
+    <p>@ViewBag.ViewDish.Text</p>
+    <br>
+    <a asp-action="EditDish" asp-route-id="@ViewBag.ViewDish.UserId"><button>Edit</button></a>
+    
+    
+    
+</body>
+</html>
